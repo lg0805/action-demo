@@ -1,11 +1,23 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import time
 
-# 初始化 WebDriver（这里以 Chrome 为例）
-driver = webdriver.Chrome()
+# 配置 Chrome 选项
+chrome_options = Options()
+chrome_options.add_argument('--headless')  # 无头模式
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('--disable-gpu')
+
+# 指定 ChromeDriver 的路径
+chrome_service = ChromeService()
+
+# 初始化 WebDriver
+driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 try:
     # 打开登录页面
@@ -52,5 +64,3 @@ try:
 finally:
     # 关闭 WebDriver
     driver.quit()
-
-
