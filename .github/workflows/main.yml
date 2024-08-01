@@ -1,0 +1,16 @@
+name: Python Job
+on:
+  schedule:
+    - cron: '5 2 * * *' # Run every day at UTC 00:00
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Run Python script
+        run: python main.py
