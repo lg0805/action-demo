@@ -1,4 +1,4 @@
-name: Python Job
+name: Python Job workflow
 on:
   schedule:
     - cron: '5 2 * * *' # Run every day at UTC 00:00
