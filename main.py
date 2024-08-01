@@ -28,11 +28,11 @@ try:
     
     # 找到 ID 为 email 的输入框，输入用户名
     email_input = driver.find_element(By.ID, 'email')
-    email_input.send_keys('lg0805@foxmail.com')
+    email_input.send_keys('email@foxmail.com')
     
     # 找到 ID 为 passwd 的输入框，输入密码
     password_input = driver.find_element(By.ID, 'passwd')
-    password_input.send_keys('jp991029')
+    password_input.send_keys('password')
     
     # 找到 ID 为 login 的按钮，并单击
     login_button = driver.find_element(By.ID, 'login')
